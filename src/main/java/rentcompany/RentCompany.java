@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RentCompany {
-    private static final String NEWLINE = System.getProperty("line.separator");
+    public static final String NEWLINE = System.getProperty("line.separator");
     private final List<Car> cars = new ArrayList<>();
 
     public void add(Car car) {

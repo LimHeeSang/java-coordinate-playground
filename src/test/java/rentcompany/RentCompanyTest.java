@@ -4,7 +4,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RentCompanyTest {
-    private static final String NEWLINE = System.getProperty("line.separator");
 
     @Test
     void report() {
@@ -17,11 +16,11 @@ public class RentCompanyTest {
 
         String report = company.getReport();
         Assertions.assertThat(report).isEqualTo(
-                "SONATA : 15리터" + NEWLINE +
-                "K5 : 20리터" + NEWLINE +
-                "SONATA : 12리터" + NEWLINE +
-                "AVANTE : 20리터" + NEWLINE +
-                "K5 : 30리터" + NEWLINE
+                "SONATA : 15리터" + RentCompany.NEWLINE +
+                "K5 : 20리터" + RentCompany.NEWLINE +
+                "SONATA : 12리터" + RentCompany.NEWLINE +
+                "AVANTE : 20리터" + RentCompany.NEWLINE +
+                "K5 : 30리터" + RentCompany.NEWLINE
         );
     }
 }
