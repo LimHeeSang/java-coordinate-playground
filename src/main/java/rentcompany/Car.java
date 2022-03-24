@@ -9,7 +9,11 @@ public abstract class Car {
         this.fuelEfficiency = fuelEfficiency;
     }
 
-    public double getFuelAmount() {
+    public int getFuelAmount() {
         return movingDistance / fuelEfficiency.getDistance();
+    }
+
+    public String getName() {
+        return fuelEfficiency.name();
     }
 }
