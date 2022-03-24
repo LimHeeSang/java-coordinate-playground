@@ -9,8 +9,8 @@ public abstract class Car {
         this.fuelEfficiency = fuelEfficiency;
     }
 
-    public int getFuelAmount() {
-        return movingDistance / fuelEfficiency.getDistance();
+    public int getFuelAmount(FuelCalculationStrategy calculationStrategy) {
+        return calculationStrategy.calculateFuelAmount(movingDistance, fuelEfficiency.getFuelEfficiency());
     }
 
     public String getName() {

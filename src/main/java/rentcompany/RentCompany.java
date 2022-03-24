@@ -14,7 +14,7 @@ public class RentCompany {
     public String getReport() {
         StringBuilder sb = new StringBuilder();
         for (Car car : cars) {
-            sb.append(car.getName()).append(" : ").append(car.getFuelAmount()).append("리터").append(NEWLINE);
+            sb.append(car.getName()).append(" : ").append(car.getFuelAmount(new FuelCalculationStrategyImpl())).append("리터").append(NEWLINE);
         }
         return sb.toString();
     }
