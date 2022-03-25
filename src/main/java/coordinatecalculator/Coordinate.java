@@ -15,4 +15,8 @@ public class Coordinate {
             throw new IllegalArgumentException("좌표 값은 0 ~ 24 사이여야 합니다.");
         }
     }
+
+    public int subAndSquare(Coordinate coordinate) {
+        return (int) Math.pow(this.coordinate - coordinate.coordinate, 2);
+    }
 }
