@@ -16,4 +16,11 @@ public class CoordinatePair {
         return Math.sqrt(subX + subY);
     }
 
+    public boolean isEqualXposition(CoordinatePair coordinatePair) {
+        return coordinateX.equals(coordinatePair.coordinateX);
+    }
+
+    public boolean isEqualYposition(CoordinatePair coordinatePair) {
+        return coordinateY.equals(coordinatePair.coordinateY);
+    }
 }

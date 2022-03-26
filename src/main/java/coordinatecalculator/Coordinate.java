@@ -1,5 +1,7 @@
 package coordinatecalculator;
 
+import java.util.Objects;
+
 public class Coordinate {
     private static final int MIN_VALUE = 0;
     private static final int MAX_VALUE = 24;
@@ -18,5 +20,18 @@ public class Coordinate {
 
     public int subAndSquare(Coordinate coordinate) {
         return (int) Math.pow(this.coordinate - coordinate.coordinate, 2);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Coordinate that = (Coordinate) o;
+        return coordinate == that.coordinate;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(coordinate);
     }
 }
