@@ -15,16 +15,10 @@ public class Rectangle {
     }
 
     private void validateIsRectangle(CoordinatePair leftDown, CoordinatePair rightDown, CoordinatePair rightUp, CoordinatePair leftUp) {
-        if (!leftUp.isEqualXposition(leftDown)) {
-            throw new IllegalArgumentException("직사각형이 아닙니다.");
-        }
-        if (!rightUp.isEqualXposition(rightDown)) {
-            throw new IllegalArgumentException("직사각형이 아닙니다.");
-        }
-        if (!leftUp.isEqualYposition(rightUp)) {
-            throw new IllegalArgumentException("직사각형이 아닙니다.");
-        }
-        if (!leftDown.isEqualYposition(rightDown)) {
+        if (!leftUp.isEqualXposition(leftDown)
+                || !rightUp.isEqualXposition(rightDown)
+                || !leftUp.isEqualYposition(rightUp)
+                || !leftDown.isEqualYposition(rightDown)) {
             throw new IllegalArgumentException("직사각형이 아닙니다.");
         }
     }
