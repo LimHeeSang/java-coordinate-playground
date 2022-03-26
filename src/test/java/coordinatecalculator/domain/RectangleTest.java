@@ -1,5 +1,7 @@
-package coordinatecalculator;
+package coordinatecalculator.domain;
 
+import coordinatecalculator.domain.CoordinatePair;
+import coordinatecalculator.domain.Rectangle;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 

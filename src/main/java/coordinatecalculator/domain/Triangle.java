@@ -1,4 +1,4 @@
-package coordinatecalculator;
+package coordinatecalculator.domain;
 
 public class Triangle {
     private final CoordinatePair point1;

@@ -1,4 +1,4 @@
-package coordinatecalculator;
+package coordinatecalculator.domain;
 
 public class Rectangle {
     private final CoordinatePair leftDown;
