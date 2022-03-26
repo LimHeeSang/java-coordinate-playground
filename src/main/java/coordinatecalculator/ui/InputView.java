@@ -8,17 +8,22 @@ public class InputView {
     public List<List<Integer>> inputCoordinate() {
         Scanner scanner = new Scanner(System.in);
 
-        String s = scanner.nextLine();
-        String[] splited = s.split("-");
+        System.out.println("좌표를 입력하세요.");
+        String input = scanner.nextLine();
+        String[] splited = input.split("-");
 
-        List<List<Integer>> list = new ArrayList<>();
+        return parseCoordinates(splited);
+    }
+
+    private List<List<Integer>> parseCoordinates(String[] splited) {
+        List<List<Integer>> coordinates = new ArrayList<>();
         for (String split : splited) {
             String substring = split.substring(1, 6);
             String[] stringCoordinate = substring.split(",");
 
-            list.add(parseIntegerCoordinate(stringCoordinate));
+            coordinates.add(parseIntegerCoordinate(stringCoordinate));
         }
-        return list;
+        return coordinates;
     }
 
     private List<Integer> parseIntegerCoordinate(String[] stringCoordinate) {
