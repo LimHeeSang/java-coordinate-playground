@@ -42,4 +42,15 @@ public class RectangleTest {
         ).isInstanceOf(IllegalArgumentException.class)
                 .hasMessage("직사각형이 아닙니다.");
     }
+
+    @Test
+    void calculate_area() {
+        Rectangle rectangle = new Rectangle(
+                new CoordinatePair(10, 10),
+                new CoordinatePair(22, 10),
+                new CoordinatePair(22, 18),
+                new CoordinatePair(10, 18)
+        );
+        Assertions.assertThat(rectangle.calculateArea()).isEqualTo(96);
+    }
 }

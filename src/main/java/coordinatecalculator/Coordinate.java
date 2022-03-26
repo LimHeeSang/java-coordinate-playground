@@ -34,4 +34,8 @@ public class Coordinate {
     public int hashCode() {
         return Objects.hash(coordinate);
     }
+
+    public int sub(Coordinate coordinate) {
+        return this.coordinate - coordinate.coordinate;
+    }
 }

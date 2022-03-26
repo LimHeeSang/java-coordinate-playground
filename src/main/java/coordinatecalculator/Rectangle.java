@@ -15,11 +15,17 @@ public class Rectangle {
     }
 
     private void validateIsRectangle(CoordinatePair leftDown, CoordinatePair rightDown, CoordinatePair rightUp, CoordinatePair leftUp) {
-        if (!leftUp.isEqualXposition(leftDown)
-                || !rightUp.isEqualXposition(rightDown)
-                || !leftUp.isEqualYposition(rightUp)
-                || !leftDown.isEqualYposition(rightDown)) {
+        if (!leftUp.isEqualXPosition(leftDown)
+                || !rightUp.isEqualXPosition(rightDown)
+                || !leftUp.isEqualYPosition(rightUp)
+                || !leftDown.isEqualYPosition(rightDown)) {
             throw new IllegalArgumentException("직사각형이 아닙니다.");
         }
+    }
+
+    public int calculateArea() {
+        int width = rightDown.subXPosition(leftDown);
+        int height = rightUp.subYPosition(rightDown);
+        return (width * height);
     }
 }
