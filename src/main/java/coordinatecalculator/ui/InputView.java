@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class InputView {
-    public List<List<Integer>> inputCoordinate() {
+    public static List<List<Integer>> inputCoordinates() {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("좌표를 입력하세요.");
@@ -15,18 +15,18 @@ public class InputView {
         return parseCoordinates(splited);
     }
 
-    private List<List<Integer>> parseCoordinates(String[] splited) {
+    private static List<List<Integer>> parseCoordinates(String[] splited) {
         List<List<Integer>> coordinates = new ArrayList<>();
         for (String split : splited) {
-            String substring = split.substring(1, 6);
-            String[] stringCoordinate = substring.split(",");
+            String replaceString = split.replace("(", "").replace(")", "");
+            String[] stringCoordinate = replaceString.split(",");
 
             coordinates.add(parseIntegerCoordinate(stringCoordinate));
         }
         return coordinates;
     }
 
-    private List<Integer> parseIntegerCoordinate(String[] stringCoordinate) {
+    private static List<Integer> parseIntegerCoordinate(String[] stringCoordinate) {
         int x = Integer.parseInt(stringCoordinate[0]);
         int y = Integer.parseInt(stringCoordinate[1]);
 

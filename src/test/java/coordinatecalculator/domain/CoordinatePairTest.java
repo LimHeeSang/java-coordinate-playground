@@ -30,7 +30,7 @@ public class CoordinatePairTest {
     @DisplayName("입력 좌표의 선을 만들어서 길이 계산")
     void calculate2() {
         Line line = new Line(new CoordinatePair(10, 10), new CoordinatePair(14, 15));
-        Double actual = line.calculateLineLength();
+        Double actual = line.calculateArea();
 
         assertThat(actual).isEqualTo(6.403124, offset(0.000001));
     }
