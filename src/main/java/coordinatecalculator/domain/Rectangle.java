@@ -1,6 +1,8 @@
 package coordinatecalculator.domain;
 
-public class Rectangle {
+import java.util.List;
+
+public class Rectangle extends Shape{
     private final CoordinatePair leftDown;
     private final CoordinatePair rightDown;
     private final CoordinatePair rightUp;
@@ -8,6 +10,18 @@ public class Rectangle {
 
     public Rectangle(CoordinatePair leftDown, CoordinatePair rightDown, CoordinatePair rightUp, CoordinatePair leftUp) {
         validateIsRectangle(leftDown, rightDown, rightUp, leftUp);
+        this.leftDown = leftDown;
+        this.rightDown = rightDown;
+        this.rightUp = rightUp;
+        this.leftUp = leftUp;
+    }
+
+    public Rectangle(List<List<Integer>> coordinates) {
+        CoordinatePair leftDown = mapListToCoordinatePair(coordinates.get(0));
+        CoordinatePair rightDown = mapListToCoordinatePair(coordinates.get(1));
+        CoordinatePair rightUp = mapListToCoordinatePair(coordinates.get(2));
+        CoordinatePair leftUp = mapListToCoordinatePair(coordinates.get(3));
+
         this.leftDown = leftDown;
         this.rightDown = rightDown;
         this.rightUp = rightUp;
@@ -23,7 +37,8 @@ public class Rectangle {
         }
     }
 
-    public int calculateArea() {
+    @Override
+    public double calculateArea() {
         int width = rightDown.subXPosition(leftDown);
         int height = rightUp.subYPosition(rightDown);
         return (width * height);

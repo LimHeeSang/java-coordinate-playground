@@ -1,6 +1,8 @@
 package coordinatecalculator.domain;
 
-public class Line {
+import java.util.List;
+
+public class Line extends Shape{
     private final CoordinatePair point1;
     private final CoordinatePair point2;
 
@@ -9,7 +11,16 @@ public class Line {
         this.point2 = point2;
     }
 
-    public Double calculateLineLength() {
+    public Line(List<List<Integer>> coordinates) {
+        CoordinatePair point1 = mapListToCoordinatePair(coordinates.get(0));
+        CoordinatePair point2 = mapListToCoordinatePair(coordinates.get(1));
+
+        this.point1 = point1;
+        this.point2 = point2;
+    }
+
+    @Override
+    public double calculateArea() {
         return point1.calculateLineLength(point2);
     }
 }
