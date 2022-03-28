@@ -56,4 +56,12 @@ public class Point {
     private int subXPosition(int x) {
         return this.x - x;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 }
