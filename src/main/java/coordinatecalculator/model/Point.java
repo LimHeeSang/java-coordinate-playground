@@ -11,7 +11,6 @@ public class Point {
 
     public Point(int x, int y) {
         validateRange(x, y);
-
         this.x = x;
         this.y = y;
     }
@@ -41,5 +40,20 @@ public class Point {
     @Override
     public int hashCode() {
         return Objects.hash(x, y);
+    }
+
+    public double calculateLength(Point comparePoint) {
+        int subX = subXPosition(comparePoint.x);
+        int subY = subYPosition(comparePoint.y);
+
+        return Math.sqrt(Math.pow(subX, 2) + Math.pow(subY, 2));
+    }
+
+    private int subYPosition(int y) {
+        return this.y - y;
+    }
+
+    private int subXPosition(int x) {
+        return this.x - x;
     }
 }
