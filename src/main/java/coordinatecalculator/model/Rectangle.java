@@ -6,14 +6,13 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-public class Rectangle {
+public class Rectangle extends AbstractShape{
     public static final String ERROR_INVALID_RECTANGLE = "직사각형 모양이 아닙니다.";
     public static final int NUM_OF_COORDINATE_CORRECT_VALUES = 2;
-    private final List<Point> points;
 
     public Rectangle(List<Point> points) {
+        super(points);
         validateIsRectangle(points);
-        this.points = points;
     }
 
     private void validateIsRectangle(List<Point> points) {
@@ -43,10 +42,13 @@ public class Rectangle {
                 .collect(Collectors.toSet());
     }
 
+    @Override
     public double calculateArea() {
+        List<Point> points = getPoints();
         int width = calculateDistance(convertToXValues(points));
         int height = calculateDistance(convertToYValues(points));
-        return (width * height);
+
+        return (double) (width * height);
     }
 
     private int calculateDistance(Set<Integer> valueOfPoints) {

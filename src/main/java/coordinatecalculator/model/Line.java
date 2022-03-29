@@ -2,14 +2,13 @@ package coordinatecalculator.model;
 
 import java.util.List;
 
-public class Line {
-    private final List<Point> points;
-
+public class Line extends AbstractShape{
     public Line(List<Point> points) {
-        this.points = points;
+        super(points);
     }
 
-    public double calculateLength() {
-        return points.get(0).calculateLength(points.get(1));
+    @Override
+    public double calculateArea() {
+        return getPoints().get(0).calculateLength(getPoints().get(1));
     }
 }

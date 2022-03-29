@@ -2,15 +2,14 @@ package coordinatecalculator.model;
 
 import java.util.List;
 
-public class Triangle {
+public class Triangle extends AbstractShape{
     public static final String ERROR_INVALID_TRIANGLE = "삼각형이 아닙니다.";
-    private final List<Point> points;
 
     public Triangle(List<Point> points) {
+        super(points);
         if (!validateIsTriangle(points)) {
             throw new IllegalArgumentException(ERROR_INVALID_TRIANGLE);
         }
-        this.points = points;
     }
 
     private boolean validateIsTriangle(List<Point> points) {
@@ -20,10 +19,11 @@ public class Triangle {
     /**
      * area = s(s - a)(s - b)(s - c)
      */
+    @Override
     public double calculateArea() {
-        Point firstPoint = points.get(0);
-        Point secondPoint = points.get(1);
-        Point thirdPoint = points.get(2);
+        Point firstPoint = getPoints().get(0);
+        Point secondPoint = getPoints().get(1);
+        Point thirdPoint = getPoints().get(2);
 
         double a = firstPoint.calculateLength(secondPoint);
         double b = secondPoint.calculateLength(thirdPoint);

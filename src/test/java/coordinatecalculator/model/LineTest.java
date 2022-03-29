@@ -11,7 +11,7 @@ public class LineTest {
     void calculateLength() {
         List<Point> points = Arrays.asList(new Point(10, 10), new Point(14, 15));
         Line line = new Line(points);
-        double length = line.calculateLength();
+        double length = line.calculateArea();
         Assertions.assertThat(length).isEqualTo(6.403124D, Assertions.offset(0.00099));
     }
 }
