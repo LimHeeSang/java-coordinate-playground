@@ -29,19 +29,6 @@ public class Point {
         return x < MIN_POSITION || x > MAX_POSITION;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Point point = (Point) o;
-        return x == point.x && y == point.y;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(x, y);
-    }
-
     public double calculateLength(Point comparePoint) {
         int subX = subXPosition(comparePoint.x);
         int subY = subYPosition(comparePoint.y);
@@ -70,5 +57,18 @@ public class Point {
             return 0;
         }
         return Math.abs((double) (this.y - comparePoint.y) / (this.x - comparePoint.x));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return getX() == point.getX() && getY() == point.getY();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getX(), getY());
     }
 }
