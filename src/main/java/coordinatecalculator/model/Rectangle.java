@@ -7,7 +7,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Rectangle {
-    public static final String ERROR_VALID_RECTANGLE = "직사각형 모양이 아닙니다.";
+    public static final String ERROR_INVALID_RECTANGLE = "직사각형 모양이 아닙니다.";
     public static final int NUM_OF_COORDINATE_CORRECT_VALUES = 2;
     private final List<Point> points;
 
@@ -21,7 +21,7 @@ public class Rectangle {
         Set<Integer> yValuesOfPoints = convertToYValues(points);
 
         if (hasNotToPoints(xValuesOfPoints) || hasNotToPoints(yValuesOfPoints)) {
-            throw new IllegalArgumentException(ERROR_VALID_RECTANGLE);
+            throw new IllegalArgumentException(ERROR_INVALID_RECTANGLE);
         }
     }
 

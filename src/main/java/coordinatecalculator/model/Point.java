@@ -64,4 +64,11 @@ public class Point {
     public int getY() {
         return y;
     }
+
+    public double calculateSlope(Point comparePoint) {
+        if (this.x == comparePoint.x) {
+            return 0;
+        }
+        return Math.abs((double) (this.y - comparePoint.y) / (this.x - comparePoint.x));
+    }
 }
