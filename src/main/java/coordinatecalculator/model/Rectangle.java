@@ -1,5 +1,6 @@
 package coordinatecalculator.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.function.Function;
@@ -40,5 +41,16 @@ public class Rectangle {
         return points.stream()
                 .map(function)
                 .collect(Collectors.toSet());
+    }
+
+    public double calculateArea() {
+        int width = calculateDistance(convertToXValues(points));
+        int height = calculateDistance(convertToYValues(points));
+        return (width * height);
+    }
+
+    private int calculateDistance(Set<Integer> valueOfPoints) {
+        List<Integer> values = new ArrayList<>(valueOfPoints);
+        return Math.abs(values.get(0) - values.get(1));
     }
 }
