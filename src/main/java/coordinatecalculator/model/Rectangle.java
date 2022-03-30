@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 public class Rectangle extends AbstractShape{
     public static final String ERROR_INVALID_RECTANGLE = "직사각형 모양이 아닙니다.";
     public static final int NUM_OF_COORDINATE_CORRECT_VALUES = 2;
+    public static final String OUTPUT_AREA_OF_RECTANGLE = "사각형 넓이는";
 
     public Rectangle(List<Point> points) {
         super(points);
@@ -54,5 +55,10 @@ public class Rectangle extends AbstractShape{
     private int calculateDistance(Set<Integer> valueOfPoints) {
         List<Integer> values = new ArrayList<>(valueOfPoints);
         return Math.abs(values.get(0) - values.get(1));
+    }
+
+    @Override
+    public String getAreaInfo() {
+        return OUTPUT_AREA_OF_RECTANGLE + calculateArea();
     }
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 public class Triangle extends AbstractShape{
     public static final String ERROR_INVALID_TRIANGLE = "삼각형이 아닙니다.";
+    public static final String OUTPUT_AREA_OF_TRIANGLE = "삼각형 넓이는";
 
     public Triangle(List<Point> points) {
         super(points);
@@ -36,5 +37,10 @@ public class Triangle extends AbstractShape{
         double s = (a + b + c) / 2;
 
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
+    }
+
+    @Override
+    public String getAreaInfo() {
+        return OUTPUT_AREA_OF_TRIANGLE + calculateArea();
     }
 }
